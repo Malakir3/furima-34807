@@ -28,7 +28,7 @@
 | condition_id    | integer    | null: false                    |
 | price           | integer    | null: false                    |
 | delivery_fee_id | integer    | null: false                    |
-| send_from_id    | integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | send_within_id  | integer    | null: false                    |
 
 ### Association
