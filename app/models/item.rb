@@ -1,11 +1,14 @@
 class Item < ApplicationRecord
+  belongs_to :user
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to: :user
-  belongs_to: :category
-  belongs_to: :condition
-  belongs_to: :delivery_fee
-  belongs_to: :prefecture
-  belongs_to: :send_within
+
+  belongs_to :category
+  belongs_to :condition
+  belongs_to :delivery_fee
+  belongs_to :prefecture
+  belongs_to :send_within
+  has_one_attached :image
 
   validates :title, :description, :price, presence: true
 
