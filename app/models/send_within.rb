@@ -8,5 +8,4 @@ class SendWithin < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :items
-
 end

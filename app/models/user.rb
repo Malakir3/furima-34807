@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates :nickname
     validates :birthday
   end
-  
+
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: '全角（漢字・ひらがな・カタカナ）を使用してください' } do
     validates :first_name_kanji
     validates :last_name_kanji
