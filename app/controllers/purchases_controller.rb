@@ -1,11 +1,11 @@
 class PurchasesController < ApplicationController
+  before_action :set_item
+  
   def index
-    set_item
     @purchase_address = PurchaseAddress.new
   end
 
   def create
-    set_item
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
       pay_item
