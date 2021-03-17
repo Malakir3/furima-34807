@@ -4,7 +4,8 @@ RSpec.describe PurchaseAddress, type: :model do
   describe '商品の購入' do
     before do
       item = FactoryBot.create(:item)
-      @purchase_address = FactoryBot.build(:purchase_address, user_id: item.user_id, item_id: item.id)
+      user = FactoryBot.create(:user)
+      @purchase_address = FactoryBot.build(:purchase_address, user_id: user.id, item_id: item.id)
       sleep(0.1)
     end
 
@@ -33,7 +34,7 @@ RSpec.describe PurchaseAddress, type: :model do
       end
 
       it 'prefecture_idが1では商品の購入ができないこと' do
-        @purchase_address.prefecture_id = '1'
+        @purchase_address.prefecture_id = 1
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Prefecture can't be blank")
       end
