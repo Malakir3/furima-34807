@@ -9,9 +9,9 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee
   belongs_to :prefecture
   belongs_to :send_within
-  has_one_attached :image
+  has_many_attached :images
 
-  validates :title, :description, :price, :image, presence: true
+  validates :title, :description, :price, :images, presence: true
 
   with_options numericality: { other_than: 1 } do
     validates :category_id
