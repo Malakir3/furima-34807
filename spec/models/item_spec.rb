@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
 
   describe '商品出品' do
     context '商品出品できるとき' do
-      it 'image, title, description, category_id, condition_id, deliverry_fee_id,
+      it 'images, title, description, category_id, condition_id, deliverry_fee_id,
           prefecture_id, send_within_id, priceが存在すれば商品出品できる' do
         expect(@item).to be_valid
       end
@@ -15,9 +15,9 @@ RSpec.describe Item, type: :model do
 
     context '商品出品できないとき' do
       it 'imageが空では商品出品できない' do
-        @item.image = nil
+        @item.images = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image can't be blank")
+        expect(@item.errors.full_messages).to include("Images can't be blank")
       end
 
       it 'titleが空では商品出品できない' do
