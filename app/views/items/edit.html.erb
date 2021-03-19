@@ -17,7 +17,7 @@ app/assets/stylesheets/items/new.css %>
         出品画像
         <span class="indispensable">必須</span>
       </div>
-      <%= image_tag @item.image, id: 'item-image-origin' if @item.image.present? %>
+      <%= image_tag @item.image.variant(resize: '100x100'), class:"item-image-origin", id:"item-image-origin" if @item.image.present? %>
       <div id="image-list"></div>
       <div class="click-upload">
         <p>
