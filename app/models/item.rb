@@ -15,10 +15,10 @@ class Item < ApplicationRecord
     validates :title
     validates :description
     validates :price
-    validates :images, presence: { message: "を添付してください" }
+    validates :images, presence: { message: 'を添付してください' }
   end
 
-  with_options numericality: { other_than: 1 , message: "を選択してください"} do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :category_id
     validates :condition_id
     validates :delivery_fee_id

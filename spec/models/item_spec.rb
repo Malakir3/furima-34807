@@ -17,19 +17,19 @@ RSpec.describe Item, type: :model do
       it 'imageが空では商品出品できない' do
         @item.images = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("出品画像を添付してください")
+        expect(@item.errors.full_messages).to include('出品画像を添付してください')
       end
 
       it 'titleが空では商品出品できない' do
         @item.title = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("商品名を入力してください")
+        expect(@item.errors.full_messages).to include('商品名を入力してください')
       end
 
       it 'descriptionが空では商品出品できない' do
         @item.description = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("商品の説明を入力してください")
+        expect(@item.errors.full_messages).to include('商品の説明を入力してください')
       end
 
       it 'category_idは1以外を選択されていなければ商品出品できない' do
@@ -65,7 +65,7 @@ RSpec.describe Item, type: :model do
       it 'priceが空では商品出品できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("価格を入力してください")
+        expect(@item.errors.full_messages).to include('価格を入力してください')
       end
 
       it 'priceが¥9,999,999より大きければ商品出品できない' do
