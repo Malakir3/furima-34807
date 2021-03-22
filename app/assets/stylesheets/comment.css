@@ -1,0 +1,17 @@
+/* コメント投稿 */
+.comments {
+  padding: 5px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.comments a {
+  color: #57C3E9;
+}
+
+.comments a:hover {
+  text-decoration: underline;
+}
+
+.comment-list {
+  font-size: 20px;
