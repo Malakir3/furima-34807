@@ -79,14 +79,14 @@
 
   <div class="comment-box">
     <% if user_signed_in? %>
-      <%= form_with(model: [@item, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "3", class:"comment-text"%>
+      <%= form_with(model: [@item, @comment], local: true) do |f| %>
+        <%= f.text_area :text, placeholder: "コメントする", rows: "3", class:"comment-text"%>
         <p class="comment-warn">
           相手のことを考え丁寧なコメントを心がけましょう。
           <br>
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         </p>
-        <%= form.submit "コメントする", class:"comment-btn"%>
+        <%= f.submit "コメントする", class:"comment-btn"%>
           <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
       <% end %>   
     <% else %>
@@ -96,8 +96,7 @@
       <div class="comments", id='comments'>
       <% @comments.reverse_each do |comment| %>
         <p>
-          <strong><%= link_to comment.user.nickname, "#" %>:</strong>
-          <%= comment.text %>
+          <%= comment.nickname %>: <%= comment.text %>
         </p>
       <% end %>
     </div>

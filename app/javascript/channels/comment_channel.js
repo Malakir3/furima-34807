@@ -10,8 +10,7 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    const html = `<p>${data.content.user_id}:${data.content.text}</p>`;
-    console.log(html)
+    const html = `<p>${data.content.nickname}: ${data.content.text}</p>`;
     const comments = document.getElementById('comments');
     const newComment = document.getElementById('comment_text');
     comments.insertAdjacentHTML('afterbegin', html);

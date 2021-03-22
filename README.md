@@ -64,11 +64,12 @@
 
 
 ## Commentsテーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
-| text   | text       | null: false                    |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| nickname | string     | null: false                    |
+| item     | references | null: false, foreign_key: true |
+| text     | text       | null: false                    |
 
 ### Association
 - belongs_to :user
