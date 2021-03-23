@@ -13,7 +13,8 @@ module Furima34807
 
     config.i18n.default_locale = :ja
 
-    config.action_view.automatically_disable_submit_tag = false
+    # config.action_view.automatically_disable_submit_tag = false
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
